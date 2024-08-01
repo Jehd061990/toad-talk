@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.material-symbols-outlined {
+  font-size: 35px;
+}
+
+/* Background Image from this link: https://wallpapers-clan.com/desktop-wallpapers/cottagecore-cute-frog-by-house/ */
+body {
+  background-image: url("../public/img/frog-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: gray;
+}
+
+:root {
+  --primary-font: "Nunito", sans-serif;
+  --secondary-font: "Quicksand", sans-serif;
+}
+
+.primary-font {
+  font-family: var(--primary-font) !important;
+}
+
+.secondary-font {
+  font-family: var(--secondary-font) !important;
+}
+
+.see-pw {
+  position: absolute;
+  margin: auto;
+  bottom: 0;
+  right: 0;
+}

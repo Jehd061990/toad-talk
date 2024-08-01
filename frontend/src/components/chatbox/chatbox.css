@@ -1,0 +1,155 @@
+/* Chatbox */
+.chat-box {
+  width: 100%;
+  height: 100vh;
+  /* background-color: aqua; */
+}
+
+.chat-box-chats {
+  border-radius: 20px;
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  height: 90%;
+}
+
+/* .accessories {
+  width: 20%;
+} */
+
+.chat-files-container {
+  height: 43vh;
+  background-color: red;
+  border-radius: 20px;
+}
+
+.chat-files-container.open {
+  animation: 0.2s open-chat-files-container linear forwards;
+}
+
+@keyframes open-chat-files-container {
+  from {
+    width: 3em;
+    background-color: transparent;
+  }
+  to {
+    width: 16em;
+    background-color: red;
+  }
+}
+
+.chat-files-container.close {
+  animation: 0.2s close-chat-files-container linear forwards;
+}
+
+@keyframes close-chat-files-container {
+  from {
+    width: 16em;
+    background-color: red;
+  }
+  to {
+    width: 3em;
+    background-color: transparent;
+  }
+}
+
+.chat-members-container {
+  height: 43vh;
+  background-color: rgb(60, 217, 89);
+  border-radius: 20px;
+}
+
+.chat-members-container.open {
+  animation: 0.2s open-chat-members-container linear forwards;
+}
+
+@keyframes open-chat-members-container {
+  from {
+    width: 3em;
+    background-color: transparent;
+  }
+  to {
+    width: 16em;
+    background-color: rgb(60, 217, 89);
+  }
+}
+
+.chat-members-container.close {
+  animation: 0.2s close-chat-members-container linear forwards;
+}
+
+@keyframes close-chat-members-container {
+  from {
+    width: 16em;
+    background-color: rgb(60, 217, 89);
+  }
+  to {
+    width: 3em;
+    background-color: transparent;
+  }
+}
+
+/* Responsive Resolution */
+@media only screen and (max-width: 1024px) {
+  @keyframes open-chat-files-container {
+    from {
+      width: 3em;
+      background-color: transparent;
+    }
+    to {
+      width: 10em;
+      background-color: red;
+    }
+  }
+
+  @keyframes close-chat-files-container {
+    from {
+      width: 10em;
+      background-color: red;
+    }
+    to {
+      width: 3em;
+      background-color: transparent;
+    }
+  }
+
+  @keyframes open-chat-members-container {
+    from {
+      width: 3em;
+      background-color: transparent;
+    }
+    to {
+      width: 10em;
+      background-color: rgb(60, 217, 89);
+    }
+  }
+
+  @keyframes close-chat-members-container {
+    from {
+      width: 10em;
+      background-color: rgb(60, 217, 89);
+    }
+    to {
+      width: 3em;
+      background-color: transparent;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .chat-box {
+    width: 100%;
+    height: 95vh;
+  }
+
+  .chat-files-container {
+    height: 1vh;
+    background-color: red;
+    border-radius: 20px;
+  }
+
+  .chat-members-container {
+    height: 1vh;
+    background-color: rgb(60, 217, 89);
+    border-radius: 20px;
+  }
+}
