@@ -1,0 +1,11 @@
+.convo-wrapper {
+  margin-right: 5px;
+  width: 98%;
+  height: 85.5%;
+}
+
+.convo .user-convo {
+  margin: 15px 0;
+  width: 98%;
+  transform: translateX(-2px);
+}

@@ -92,7 +92,7 @@
 @media only screen and (max-width: 1024px) {
   @keyframes open-chat-files-container {
     from {
-      width: 3em;
+      width: 1.5em;
       background-color: transparent;
     }
     to {
@@ -107,14 +107,14 @@
       background-color: red;
     }
     to {
-      width: 3em;
+      width: 1.5em;
       background-color: transparent;
     }
   }
 
   @keyframes open-chat-members-container {
     from {
-      width: 3em;
+      width: 1.5em;
       background-color: transparent;
     }
     to {
@@ -129,7 +129,7 @@
       background-color: rgb(60, 217, 89);
     }
     to {
-      width: 3em;
+      width: 1.5em;
       background-color: transparent;
     }
   }

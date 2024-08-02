@@ -8,9 +8,9 @@ const Sidebar = () => {
   return (
     <>
       <div
-        className={`side-bar z-10 bg-accent h-100vh secondary-font ${
+        className={`side-bar z-10 bg-accent md:w-24 lg:w-48 h-100vh secondary-font ${
           navBtn ? "open-side-bar" : "close-side-bar"
-        } absolute md:static md:bg-transparent`}
+        } absolute md:relative md:bg-transparent`}
       >
         <div className="user-nav grid justify-center bg-transparent relative">
           <label
@@ -31,15 +31,19 @@ const Sidebar = () => {
           </label>
           <div className="mt-10">
             <div className="avatar online">
-              <div className="w-20 rounded-full">
+              <div className="md:w-16 lg:w-20 rounded-full">
                 <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
               </div>
             </div>
           </div>
           <div className="items-center flex flex-col-reverse mb-5">
             <p className="text-white">Log-out</p>
-            <button className="grid justify-center items-center w-20 logout-btn">
-              <img src="./img/logout-icon.svg" alt="." />
+            <button className="grid justify-center items-center  logout-btn">
+              <img
+                className="md:w-8 lg:w-11"
+                src="./img/logout-icon.svg"
+                alt="."
+              />
             </button>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Friends from "./friends/Friends";
+import Convo from "./convo/Convo";
 
 import "./chatbox.css";
 
@@ -8,11 +9,23 @@ const Chatbox = () => {
   const [openMembers, setOpenMembers] = useState(false);
   const [chatTab, setChatTab] = useState("");
 
+  const [chatId, setChatId] = useState(null);
+
+  const passChatId = (data) => {
+    setChatId(data);
+  };
+
   return (
     <div className="chat-box items-center flex flex-col-reverse md:flex-row -z-0 secondary-font">
       {/* ChatBox Component */}
-      <div className="chat-box-chats me-5 ms-5 md:ms-0">
-        <Friends />
+      <div className="flex chat-box-chats me-5 ms-5 md:ms-0">
+        <Friends getChatId={passChatId} openFriends={chatId} />
+        <Convo chatId={chatId} closeConvo={passChatId} />
+      </div>
+
+      <div className="hidden chat-box-chats me-5 ms-5 md:ms-0">
+        <Friends getChatId={passChatId} openFriends={chatId} />
+        <Convo chatId={chatId} closeConvo={passChatId} />
       </div>
 
       {/* Chats Right Side Components (files and members) */}
