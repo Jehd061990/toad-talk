@@ -31,7 +31,7 @@ const Sidebar = () => {
           </label>
           <div className="mt-10">
             <div className="avatar online">
-              <div className="md:w-16 lg:w-20 rounded-full">
+              <div className="w-24 md:w-16 lg:w-20 rounded-full">
                 <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
               </div>
             </div>

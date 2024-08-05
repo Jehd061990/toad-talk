@@ -1,13 +1,16 @@
 import { useState } from "react";
+import "./chatbox.css";
+
+// Components
 import Friends from "./friends/Friends";
 import Convo from "./convo/Convo";
-
-import "./chatbox.css";
+import { MobileGroupInfo, DesktopGroupInfo } from "./groupinfo/GroupInfo";
+import { MobileMembers, DesktopMembers } from "./members/Members";
 
 const Chatbox = () => {
   const [openFiles, setOpenFiles] = useState(false);
   const [openMembers, setOpenMembers] = useState(false);
-  const [chatTab, setChatTab] = useState("");
+  const [chatTab, setChatTab] = useState("messages");
 
   const [chatId, setChatId] = useState(null);
 
@@ -18,70 +21,39 @@ const Chatbox = () => {
   return (
     <div className="chat-box items-center flex flex-col-reverse md:flex-row -z-0 secondary-font">
       {/* ChatBox Component */}
-      <div className="flex chat-box-chats me-5 ms-5 md:ms-0">
+      <div
+        className={`md:flex ${
+          chatTab === "messages" ? "flex" : "hidden"
+        }  chat-box-chats me-5 ms-5 md:ms-0`}
+      >
         <Friends getChatId={passChatId} openFriends={chatId} />
         <Convo chatId={chatId} closeConvo={passChatId} />
       </div>
 
-      <div className="hidden chat-box-chats me-5 ms-5 md:ms-0">
-        <Friends getChatId={passChatId} openFriends={chatId} />
-        <Convo chatId={chatId} closeConvo={passChatId} />
+      <div
+        className={`${
+          chatTab === "files" ? "flex" : "hidden"
+        }  chat-box-chats me-5 ms-5 md:ms-0 md:hidden`}
+      >
+        <MobileGroupInfo />
+      </div>
+
+      <div
+        className={`${
+          chatTab === "members" ? "flex" : "hidden"
+        }  chat-box-chats me-5 ms-5 md:ms-0 md:hidden`}
+      >
+        <MobileMembers />
       </div>
 
       {/* Chats Right Side Components (files and members) */}
-      <div className="gap-5 flex-col me-5 items-end hidden md:flex">
-        <div
-          className={
-            openFiles
-              ? " chat-files-container flex flex-col items-end open"
-              : " chat-files-container flex  items-center close"
-          }
-        >
-          <label
-            className="swap"
-            onChange={() => {
-              setOpenFiles(!openFiles);
-            }}
-          >
-            <input type="checkbox" />
-            <div className="swap-on">
-              <span className="material-symbols-outlined text-white">
-                close
-              </span>
-            </div>
-            <div className="swap-off">
-              <span className="material-symbols-outlined text-white">
-                folder
-              </span>
-            </div>
-          </label>
-        </div>
-        <div
-          className={
-            openMembers
-              ? "chat-members-container open flex flex-col items-end open"
-              : "chat-members-container close flex  items-center close"
-          }
-        >
-          <label
-            className="swap"
-            onChange={() => {
-              setOpenMembers(!openMembers);
-            }}
-          >
-            <input type="checkbox" />
-            <div className="swap-on">
-              <span className="material-symbols-outlined text-white">
-                close
-              </span>
-            </div>
-            <div className="swap-off">
-              <span className="material-symbols-outlined text-white">
-                group
-              </span>
-            </div>
-          </label>
-        </div>
+      <div className="relative gap-5 flex-col me-5 items-end hidden md:flex">
+        <DesktopGroupInfo openFiles={openFiles} setOpenFiles={setOpenFiles} />
+
+        <DesktopMembers
+          openMembers={openMembers}
+          setOpenMembers={setOpenMembers}
+        />
       </div>
 
       {/* Chats Mobile Version Componenst (chats, filse and member) */}
